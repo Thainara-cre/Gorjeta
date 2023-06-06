@@ -30,6 +30,12 @@ export const InputContainer = styled.div `
     display: flex;
     align-items: center;
     border-radius: 0.3125rem;
+
+    &:has(input:focus),
+    &:has(input:hover) {
+        outline: 2px solid #26C2AE;
+    }
+
     input {
         border:none;
         font-size: 1.5rem;
@@ -73,6 +79,14 @@ export const ButtonsContainer = styled.div `
     input[type="button"] {
         background: #00474B;
         color: #F3F9FA;
+
+        &:hover {
+            background-color:  #9FE8DF;
+        }
+    }
+
+    input[type="button"].selected {
+        background: #26C2AE;
     }
 
     input#custom-tip {
@@ -90,6 +104,12 @@ export const ButtonsContainer = styled.div `
             -webkit-appearance: none;
             margin: 0;
         }
+
+            
+        &:focus,
+        &:hover {
+            outline: 2px solid #26C2AE;
+        }
     }
 
     @media (min-width: 950px)  {
@@ -101,57 +121,3 @@ export const PorcentagemContainer = styled(ContaContainer)``
 
 export const PessoasContainer = styled(ContaContainer)``
 
-export const ResultadoContainer = styled.div`
-    background: #00474B;
-    border-radius: 0.9375rem;
-    padding: 2rem 1.5rem;
-
-    button {
-        width: 100%;
-        background: #26C2AE;
-        color: #00474B;
-        border: none;
-        font-size: 1.25rem;
-        padding-block: 0.5rem;
-        text-transform: uppercase;
-        border-radius: 0.3125rem;
-    }
-
-    @media (min-width: 950px) {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-
-    }
-`
-
-export const GorjetaContainer = styled.div `
-    display: flex;
-    margin-bottom: 1.25rem;
-    justify-content: space-between;
-    align-items:center;
-
-    p:last-child {
-        color: #26C2AE;
-        font-size: 2rem;
-        line-height: 3rem;
-    }
-    
-    p:first-child {
-        color: white;
-        line-height: 1.5rem;
-
-        span {
-            color: #7F9D9F;
-            font-size: 0.75rem;
-        }
-    }
-`
-
-export const TotalContainer = styled(GorjetaContainer)`
-    margin-bottom: 2rem;
-`
-
-export const GorjetaTotalContainer = styled.div `
-    
-`
